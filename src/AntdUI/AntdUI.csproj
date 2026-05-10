@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
 		<TargetFrameworks>net10.0-windows;net9.0-windows;net8.0-windows;net6.0-windows;net48;net46;net40</TargetFrameworks>
@@ -25,19 +24,18 @@
 		<PackageProjectUrl>https://gitee.com/AntdUI/AntdUI</PackageProjectUrl>
 		<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<AnalysisLevel>none</AnalysisLevel>
+		<NoWarn>$(NoWarn);CS0108;CS8765;CS0114;CS0162;CS0168;CS0169;CS0219;CS0612;CS0618;CS0649;CS1591;CS1998;CS8073;CS8094;CS8500;CS8600;CS8601;CS8602;CS8603;CS8604;CS8605;CS8606;CS8607;CS8608;CS8609;CS8610;CS8611;CS8612;CS8613;CS8614;CS8615;CS8616;CS8617;CS8618;CS8619;CS8620;CS8621;CS8622;CS8623;CS8624;CS8625;CS8626;CS8627;CS8629;CS8631;CS8632;CS8633;CS8634;CS8767;CS8769</NoWarn>
 	</PropertyGroup>
-
 	<ItemGroup Condition="'$(TargetFramework)' == 'net40' OR '$(TargetFramework)' == 'net46' OR '$(TargetFramework)' == 'net48'">
 		<Reference Include="System.Design" />
 	</ItemGroup>
-
 	<ItemGroup>
 		<None Include="../logo.png">
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
 		</None>
 	</ItemGroup>
-
 	<ItemGroup>
 		<Compile Update="Properties\Resources.Designer.cs">
 			<DesignTime>True</DesignTime>
@@ -45,26 +43,22 @@
 			<DependentUpon>Resources.resx</DependentUpon>
 		</Compile>
 	</ItemGroup>
-
 	<ItemGroup>
 		<EmbeddedResource Update="Properties\Resources.resx">
 			<Generator>ResXFileCodeGenerator</Generator>
 			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
 		</EmbeddedResource>
 	</ItemGroup>
-
 	<PropertyGroup Condition="'$(Pack)' == 'true'">
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<SignAssembly>True</SignAssembly>
 		<AssemblyOriginatorKeyFile>../../key.snk</AssemblyOriginatorKeyFile>
 	</PropertyGroup>
-
 	<ItemGroup Condition="'$(Pack)' == 'true'">
 		<None Include="../../doc/wiki/README.md">
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
 		</None>
 	</ItemGroup>
-
 </Project>
